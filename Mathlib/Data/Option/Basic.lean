@@ -200,25 +200,29 @@ theorem mem_pmem {a : α} (h : ∀ a ∈ x, p a) (ha : a ∈ x) : f a (h a ha) �
 
 theorem pmap_map (g : γ → α) (x : Option γ) (H) :
     pmap f (x.map g) H = pmap (fun a h ↦ f (g a) h) x fun a h ↦ H _ (mem_map_of_mem _ h) := by
-  cases x <;> simp only [map_none', map_some', pmap]
+  -- Egg: Stack overflow
+  cases x <;> sorry -- simp only [map_none', map_some', pmap]
 #align option.pmap_map Option.pmap_map
 
 theorem map_pmap (g : β → γ) (f : ∀ a, p a → β) (x H) :
-    Option.map g (pmap f x H) = pmap (fun a h ↦ g (f a h)) x H := by
-  cases x <;> simp only [map_none', map_some', pmap]
+    Option.map g (pmap f x H) = pmap (fun a h ↦ g (f a h)) x H :=
+  -- Egg: Stack overflow
+  by cases x <;> sorry -- simp only [map_none', map_some', pmap]
 #align option.map_pmap Option.map_pmap
 
 -- Porting note: Can't simp tag this anymore because `pmap` simplifies
 -- @[simp]
 theorem pmap_eq_map (p : α → Prop) (f : α → β) (x H) :
     @pmap _ _ p (fun a _ ↦ f a) x H = Option.map f x := by
-  cases x <;> simp only [map_none', map_some', pmap]
+  -- Egg: Stack overflow
+  cases x <;> sorry -- simp only [map_none', map_some', pmap]
 #align option.pmap_eq_map Option.pmap_eq_map
 
 theorem pmap_bind {α β γ} {x : Option α} {g : α → Option β} {p : β → Prop} {f : ∀ b, p b → γ} (H)
     (H' : ∀ (a : α), ∀ b ∈ g a, b ∈ x >>= g) :
     pmap f (x >>= g) H = x >>= fun a ↦ pmap f (g a) fun b h ↦ H _ (H' a _ h) := by
-  cases x <;> simp only [pmap, bind_eq_bind, none_bind, some_bind]
+  -- Egg:
+  cases x <;> sorry -- simp only [pmap, bind_eq_bind, none_bind, some_bind]
 #align option.pmap_bind Option.pmap_bind
 
 theorem bind_pmap {α β γ} {p : α → Prop} (f : ∀ a, p a → β) (x : Option α) (g : β → Option γ) (H) :

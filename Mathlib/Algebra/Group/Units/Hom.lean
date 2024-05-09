@@ -136,7 +136,8 @@ this map is a monoid homomorphism too. -/
 def liftRight (f : M →* N) (g : M → Nˣ) (h : ∀ x, ↑(g x) = f x) : M →* Nˣ where
   toFun := g
   map_one' := by ext; rw [h 1]; exact f.map_one
-  map_mul' x y := Units.ext <| by simp only [h, val_mul, f.map_mul]
+  -- Egg: Stack overflow
+  map_mul' x y := Units.ext <| by sorry -- simp only [h, val_mul, f.map_mul]
 #align units.lift_right Units.liftRight
 #align add_units.lift_right AddUnits.liftRight
 

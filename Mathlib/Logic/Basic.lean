@@ -1371,4 +1371,5 @@ theorem lawful_beq_subsingleton {α : Type*} (inst1 : BEq α) (inst2 : BEq α)
     inst1 = inst2 := by
   apply beq_ext
   intro x y
-  simp only [beq_eq_decide]
+  -- Egg: Crashes (see WIP)
+  sorry -- simp only [beq_eq_decide]

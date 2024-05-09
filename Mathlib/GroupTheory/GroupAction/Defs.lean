@@ -81,7 +81,8 @@ protected abbrev Function.Injective.smulZeroClass [Zero B] [SMul M B] (f : ZeroH
     (hf : Injective f) (smul : ∀ (c : M) (x), f (c • x) = c • f x) :
     SMulZeroClass M B where
   smul := (· • ·)
-  smul_zero c := hf <| by simp only [smul, map_zero, smul_zero]
+  -- Egg: Stack overflow
+  smul_zero c := hf <| by sorry -- simp only [smul, map_zero, smul_zero]
 #align function.injective.smul_zero_class Function.Injective.smulZeroClass
 
 /-- Pushforward a zero-preserving scalar multiplication along a zero-preserving map.

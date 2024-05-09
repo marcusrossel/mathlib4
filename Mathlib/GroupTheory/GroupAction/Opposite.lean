@@ -230,7 +230,9 @@ instance SMulCommClass.opposite_mid {M N} [Mul N] [SMul M N] [IsScalarTower M N 
     SMulCommClass M Nᵐᵒᵖ N :=
   ⟨fun x y z => by
     induction y using MulOpposite.rec'
-    simp only [smul_mul_assoc, MulOpposite.smul_eq_mul_unop]⟩
+    -- Egg: Stack overflow
+    sorry -- simp only [smul_mul_assoc, MulOpposite.smul_eq_mul_unop]
+  ⟩
 #align smul_comm_class.opposite_mid SMulCommClass.opposite_mid
 #align vadd_comm_class.opposite_mid VAddCommClass.opposite_mid
 

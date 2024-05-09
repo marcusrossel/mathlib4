@@ -47,6 +47,7 @@ theorem extract_extract {a : Array α} (h : s1 + e2 ≤ e1) :
   · simp only [size_extract]
     omega
   · intro i h1 h2
-    simp only [get_extract, Nat.add_assoc]
+    -- Egg: Crashes
+    sorry -- simp only [get_extract, Nat.add_assoc]
 
 end Array
