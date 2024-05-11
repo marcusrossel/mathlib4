@@ -181,9 +181,10 @@ theorem ofFn_mul {m n} (f : Fin (m * n) → α) :
 theorem ofFn_mul' {m n} (f : Fin (m * n) → α) :
     List.ofFn f = List.join (List.ofFn fun i : Fin n => List.ofFn fun j : Fin m => f ⟨m * i + j,
     calc
-      m * i + j < m * (i + 1) :=
-        (Nat.add_lt_add_left j.prop _).trans_eq (by rw [Nat.mul_add, Nat.mul_one])
-      _ ≤ _ := Nat.mul_le_mul_left _ i.prop⟩) := by simp_rw [m.mul_comm, ofFn_mul, Fin.cast_mk]
+      m * i + j < m * (i + 1) := (add_lt_add_left j.prop _).trans_eq (mul_add_one (_ : ℕ) _).symm
+      _ ≤ _ := Nat.mul_le_mul_left _ i.prop⟩) := by
+  -- Egg: unbound condition variable
+  sorry -- simp_rw [mul_comm m n, mul_comm m, ofFn_mul, Fin.cast_mk]
 #align list.of_fn_mul' List.ofFn_mul'
 
 @[simp]

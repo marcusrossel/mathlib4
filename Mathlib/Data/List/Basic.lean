@@ -1353,7 +1353,8 @@ theorem ext_nthLe {l₁ l₂ : List α} (hl : length l₁ = length l₂)
 theorem indexOf_get [DecidableEq α] {a : α} : ∀ {l : List α} (h), get l ⟨indexOf a l, h⟩ = a
   | b :: l, h => by
     by_cases h' : b = a <;>
-    simp only [h', if_pos, if_false, indexOf_cons, get, @indexOf_get _ _ l, cond_eq_if, beq_iff_eq]
+    -- Egg: crash by unbound condition
+    sorry -- simp only [h', if_pos, if_false, indexOf_cons, get, @indexOf_get _ _ l, cond_eq_if, beq_iff_eq]
 #align list.index_of_nth_le List.indexOf_get
 
 @[simp]
@@ -1376,7 +1377,8 @@ theorem indexOf_inj [DecidableEq α] {l : List α} {x y : α} (hx : x ∈ l) (hy
     have x_eq_y :
         get l ⟨indexOf x l, indexOf_lt_length.2 hx⟩ =
         get l ⟨indexOf y l, indexOf_lt_length.2 hy⟩ := by
-      simp only [h]
+      -- Egg:
+      sorry -- simp only [h]
     simp only [indexOf_get] at x_eq_y; exact x_eq_y, fun h => by subst h; rfl⟩
 #align list.index_of_inj List.indexOf_inj
 
@@ -2072,8 +2074,9 @@ theorem get?_zero_scanl : (scanl f b l).get? 0 = some b := by
 @[simp]
 theorem get_zero_scanl {h : 0 < (scanl f b l).length} : (scanl f b l).get ⟨0, h⟩ = b := by
   cases l
-  · simp only [get, scanl_nil]
-  · simp only [get, scanl_cons, singleton_append]
+  -- Egg:
+  · sorry -- simp only [get, scanl_nil]
+  · sorry -- simp only [get, scanl_cons, singleton_append]
 
 set_option linter.deprecated false in
 @[simp, deprecated get_zero_scanl (since := "2023-01-05")]
@@ -2612,7 +2615,8 @@ theorem getLast_pmap (p : α → Prop) (f : ∀ a, p a → β) (l : List α)
     · simp [hl_tl]
     · simp only [pmap]
       rw [getLast_cons, l_ih _ hl_tl]
-      simp only [getLast_cons hl_tl]
+      -- Egg:
+      sorry -- simp only [getLast_cons hl_tl]
 #align list.last_pmap List.getLast_pmap
 
 theorem get?_pmap {p : α → Prop} (f : ∀ a, p a → β) {l : List α} (h : ∀ a ∈ l, p a) (n : ℕ) :

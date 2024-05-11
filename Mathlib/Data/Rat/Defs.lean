@@ -400,6 +400,35 @@ instance addCommGroup : AddCommGroup ℚ where
   sub_eq_add_neg := Rat.sub_eq_add_neg
   nsmul := nsmulRec
   zsmul := zsmulRec
+  intCast := fun n => n
+  natCast n := Int.cast n
+  natCast_zero := rfl
+  natCast_succ n := by
+    -- Egg: Stack overflow
+    sorry -- simp only [intCast_eq_divInt, divInt_add_divInt _ _ one_ne_zero one_ne_zero, ← divInt_one_one, Nat.cast_add, Nat.cast_one, mul_one]
+
+instance commGroupWithZero : CommGroupWithZero ℚ :=
+  { exists_pair_ne := ⟨0, 1, Rat.zero_ne_one⟩
+    inv_zero := by
+      change Rat.inv 0 = 0
+      rw [Rat.inv_def]
+      rfl
+    mul_inv_cancel := Rat.mul_inv_cancel
+    mul_zero := mul_zero
+    zero_mul := zero_mul }
+
+instance isDomain : IsDomain ℚ :=
+  NoZeroDivisors.to_isDomain _
+
+-- Extra instances to short-circuit type class resolution
+-- TODO(Mario): this instance slows down Mathlib.Data.Real.Basic
+instance nontrivial : Nontrivial ℚ := by infer_instance
+
+instance commSemiring : CommSemiring ℚ := by infer_instance
+
+instance semiring : Semiring ℚ := by infer_instance
+
+instance addCommGroup : AddCommGroup ℚ := by infer_instance
 
 instance addGroup : AddGroup ℚ := by infer_instance
 

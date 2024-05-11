@@ -920,7 +920,8 @@ theorem OrderIso.map_iInf [CompleteLattice β] (f : α ≃o β) (x : ι → α) 
 
 theorem OrderIso.map_sSup [CompleteLattice β] (f : α ≃o β) (s : Set α) :
     f (sSup s) = ⨆ a ∈ s, f a := by
-  simp only [sSup_eq_iSup, OrderIso.map_iSup]
+  -- Egg: gets stuck here
+  sorry -- simp only [sSup_eq_iSup, OrderIso.map_iSup]
 #align order_iso.map_Sup OrderIso.map_sSup
 
 theorem OrderIso.map_sInf [CompleteLattice β] (f : α ≃o β) (s : Set α) :

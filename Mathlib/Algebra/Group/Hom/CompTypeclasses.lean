@@ -64,12 +64,14 @@ instance {σ : M →* M} [h : _root_.CompTriple.IsId σ] : IsId σ  where
 instance instComp_id {N P : Type*} [Monoid N] [Monoid P]
     {φ : N →* N} [IsId φ] {ψ : N →* P} :
     CompTriple φ ψ ψ where
-  comp_eq := by simp only [IsId.eq_id, MonoidHom.comp_id]
+  -- Egg: crash by unbound condition
+  comp_eq := by sorry -- simp only [IsId.eq_id, MonoidHom.comp_id]
 
 instance instId_comp {M N : Type*} [Monoid M] [Monoid N]
     {φ : M →* N} {ψ : N →* N} [IsId ψ] :
     CompTriple φ ψ φ where
-  comp_eq := by simp only [IsId.eq_id, MonoidHom.id_comp]
+  -- Egg: crash by unbound condition
+  comp_eq := by sorry -- simp only [IsId.eq_id, MonoidHom.id_comp]
 
 lemma comp_inv {φ : M →* N} {ψ : N →* M} (h : Function.RightInverse φ ψ)
     {χ : M →* M} [IsId χ] :

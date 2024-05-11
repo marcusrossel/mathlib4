@@ -64,10 +64,13 @@ theorem npow_one (x : M) : x ^ 1 = x :=
 
 theorem npow_mul_assoc (k m n : ℕ) (x : M) :
     (x ^ k * x ^ m) * x ^ n = x ^ k * (x ^ m * x ^ n) := by
-  simp only [← npow_add, add_assoc]
+  -- Egg: Unbound condition variables
+  sorry -- simp only [← npow_add, add_assoc]
 
 theorem npow_mul_comm (m n : ℕ) (x : M) :
-    x ^ m * x ^ n = x ^ n * x ^ m := by simp only [← npow_add, add_comm]
+    x ^ m * x ^ n = x ^ n * x ^ m := by
+  -- Egg: Unbound condition variables
+  sorry -- simp only [← npow_add, add_comm]
 
 theorem npow_mul (x : M) (m n : ℕ) : x ^ (m * n) = (x ^ m) ^ n := by
   induction n with

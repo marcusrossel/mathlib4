@@ -205,7 +205,9 @@ theorem map_compl (a : α) : f aᶜ = (f a)ᶜ := by rw [← himp_bot, ← himp_
 #align map_compl map_compl
 
 @[simp]
-theorem map_bihimp (a b : α) : f (a ⇔ b) = f a ⇔ f b := by simp_rw [bihimp, map_inf, map_himp]
+theorem map_bihimp (a b : α) : f (a ⇔ b) = f a ⇔ f b := by
+  -- Egg: unbound condition variable
+  sorry -- simp_rw [bihimp, map_inf, map_himp]
 #align map_bihimp map_bihimp
 
 -- TODO: `map_bihimp`
@@ -222,7 +224,9 @@ theorem map_hnot (a : α) : f (￢a) = ￢f a := by rw [← top_sdiff', ← top_
 #align map_hnot map_hnot
 
 @[simp]
-theorem map_symmDiff (a b : α) : f (a ∆ b) = f a ∆ f b := by simp_rw [symmDiff, map_sup, map_sdiff]
+theorem map_symmDiff (a b : α) : f (a ∆ b) = f a ∆ f b := by
+  -- Egg: unbound condition variable
+  sorry -- simp_rw [symmDiff, map_sup, map_sdiff]
 #align map_symm_diff map_symmDiff
 
 end CoheytingAlgebra

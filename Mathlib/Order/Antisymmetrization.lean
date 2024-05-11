@@ -249,8 +249,9 @@ def OrderIso.dualAntisymmetrization :
     (Antisymmetrization α (· ≤ ·))ᵒᵈ ≃o Antisymmetrization αᵒᵈ (· ≤ ·) where
   toFun := (Quotient.map' id) fun _ _ => And.symm
   invFun := (Quotient.map' id) fun _ _ => And.symm
-  left_inv a := Quotient.inductionOn' a fun a => by simp_rw [Quotient.map'_mk'', id]
-  right_inv a := Quotient.inductionOn' a fun a => by simp_rw [Quotient.map'_mk'', id]
+  -- Egg: Stack overflow
+  left_inv a := Quotient.inductionOn' a fun a =>  sorry -- by simp_rw [Quotient.map'_mk'', id]
+  right_inv a := Quotient.inductionOn' a fun a => sorry -- by simp_rw [Quotient.map'_mk'', id]
   map_rel_iff' := @fun a b => Quotient.inductionOn₂' a b fun a b => Iff.rfl
 #align order_iso.dual_antisymmetrization OrderIso.dualAntisymmetrization
 

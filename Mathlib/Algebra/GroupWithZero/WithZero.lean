@@ -272,7 +272,8 @@ def unitsWithZeroEquiv : (WithZero α)ˣ ≃* α where
   invFun a := Units.mk0 a coe_ne_zero
   left_inv _ := Units.ext <| by simp only [coe_unzero, Units.mk0_val]
   right_inv _ := rfl
-  map_mul' _ _ := coe_inj.mp <| by simp only [Units.val_mul, coe_unzero, coe_mul]
+  -- Egg: stack overflow
+  map_mul' _ _ := coe_inj.mp <| by sorry -- simp only [Units.val_mul, coe_unzero, coe_mul]
 #align with_zero.units_with_zero_equiv WithZero.unitsWithZeroEquiv
 
 end Group

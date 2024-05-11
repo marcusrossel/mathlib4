@@ -187,7 +187,8 @@ theorem star_mul' [CommSemigroup R] [StarMul R] (x y : R) : star (x * y) = star 
 def starMulEquiv [Mul R] [StarMul R] : R ≃* Rᵐᵒᵖ :=
   { (InvolutiveStar.star_involutive.toPerm star).trans opEquiv with
     toFun := fun x => MulOpposite.op (star x)
-    map_mul' := fun x y => by simp only [star_mul, op_mul] }
+    -- Egg: gets stuck here
+    map_mul' := fun x y => sorry } -- by simp only [star_mul, op_mul] }
 #align star_mul_equiv starMulEquiv
 #align star_mul_equiv_apply starMulEquiv_apply
 

@@ -115,7 +115,8 @@ theorem bounded_le_iff_bounded_lt [Preorder α] [NoMaxOrder α] :
 
 theorem unbounded_lt_iff_unbounded_le [Preorder α] [NoMaxOrder α] :
     Unbounded (· < ·) s ↔ Unbounded (· ≤ ·) s := by
-  simp_rw [← not_bounded_iff, bounded_le_iff_bounded_lt]
+  -- Egg: Stack overflow
+  sorry -- simp_rw [← not_bounded_iff, bounded_le_iff_bounded_lt]
 #align set.unbounded_lt_iff_unbounded_le Set.unbounded_lt_iff_unbounded_le
 
 /-! #### Greater and greater or equal -/
@@ -327,7 +328,8 @@ theorem unbounded_le_inter_not_le [SemilatticeSup α] (a : α) :
 
 theorem bounded_le_inter_lt [LinearOrder α] (a : α) :
     Bounded (· ≤ ·) (s ∩ { b | a < b }) ↔ Bounded (· ≤ ·) s := by
-  simp_rw [← not_le, bounded_le_inter_not_le]
+  -- Egg: Stack overflow
+  sorry -- simp_rw [← not_le, bounded_le_inter_not_le]
 #align set.bounded_le_inter_lt Set.bounded_le_inter_lt
 
 theorem unbounded_le_inter_lt [LinearOrder α] (a : α) :

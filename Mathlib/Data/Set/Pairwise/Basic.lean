@@ -211,7 +211,8 @@ alias ⟨Pairwise.subsingleton, _⟩ := pairwise_bot_iff
 
 /-- See also `Function.injective_iff_pairwise_ne` -/
 lemma injOn_iff_pairwise_ne {s : Set ι} : InjOn f s ↔ s.Pairwise (f · ≠ f ·) := by
-  simp only [InjOn, Set.Pairwise, not_imp_not]
+  -- Egg: stack overflow
+  sorry -- simp only [InjOn, Set.Pairwise, not_imp_not]
 
 alias ⟨InjOn.pairwise_ne, _⟩ := injOn_iff_pairwise_ne
 

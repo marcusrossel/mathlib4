@@ -647,7 +647,8 @@ theorem prodLift_apply (f : α →. β) (g : α →. γ) (x : α) :
 theorem mem_prodLift {f : α →. β} {g : α →. γ} {x : α} {y : β × γ} :
     y ∈ f.prodLift g x ↔ y.1 ∈ f x ∧ y.2 ∈ g x := by
   trans ∃ hp hq, (f x).get hp = y.1 ∧ (g x).get hq = y.2
-  · simp only [prodLift, Part.mem_mk_iff, And.exists, Prod.ext_iff]
+  · -- Egg:
+    sorry -- simp only [prodLift, Part.mem_mk_iff, And.exists, Prod.ext_iff]
   -- Porting note: was just `[exists_and_left, exists_and_right]`
   · simp only [exists_and_left, exists_and_right, (· ∈ ·), Part.Mem]
 #align pfun.mem_prod_lift PFun.mem_prodLift

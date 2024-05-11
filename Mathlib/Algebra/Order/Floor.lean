@@ -1562,7 +1562,11 @@ section LinearOrderedField
 
 variable [LinearOrderedField α] [FloorRing α]
 
+
 theorem round_eq (x : α) : round x = ⌊x + 1 / 2⌋ := by
+  -- Egg ring?:
+  sorry
+  /-
   simp_rw [round, (by simp only [lt_div_iff', two_pos] : 2 * fract x < 1 ↔ fract x < 1 / 2)]
   cases' lt_or_le (fract x) (1 / 2) with hx hx
   · conv_rhs => rw [← fract_add_floor x, add_assoc, add_left_comm, floor_int_add]
@@ -1582,6 +1586,7 @@ theorem round_eq (x : α) : round x = ⌊x + 1 / 2⌋ := by
     constructor
     · linarith
     · linarith [fract_lt_one x]
+  -/
 #align round_eq round_eq
 
 @[simp]

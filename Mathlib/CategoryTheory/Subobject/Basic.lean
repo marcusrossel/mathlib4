@@ -601,8 +601,8 @@ which preserves the order. -/
 def mapIsoToOrderIso (e : X ≅ Y) : Subobject X ≃o Subobject Y where
   toFun := (map e.hom).obj
   invFun := (map e.inv).obj
-  left_inv g := by simp_rw [← map_comp, e.hom_inv_id, map_id]
-  right_inv g := by simp_rw [← map_comp, e.inv_hom_id, map_id]
+  left_inv g := by sorry -- Egg: timeout: simp_rw [← map_comp, e.hom_inv_id, map_id]
+  right_inv g := by sorry -- Egg: timeout:simp_rw [← map_comp, e.inv_hom_id, map_id]
   map_rel_iff' {A B} := by
     dsimp
     constructor

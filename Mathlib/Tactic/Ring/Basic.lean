@@ -7,6 +7,11 @@ import Mathlib.Algebra.Order.Ring.Rat
 import Mathlib.Tactic.NormNum.Inv
 import Mathlib.Tactic.NormNum.Pow
 import Mathlib.Util.AtomM
+<<<<<<< HEAD
+=======
+import Mathlib.Data.Rat.Order
+import Mathlib.Testing.Egg.RingOverride
+>>>>>>> 711af927c (Sorry crashing test cases)
 
 /-!
 # `ring` tactic
@@ -1169,7 +1174,15 @@ allowing variables in the exponent.
 * The variant `ring1!` will use a more aggressive reducibility setting
   to determine equality of atoms.
 -/
-elab (name := ring1) "ring1" tk:"!"? : tactic => liftMetaMAtMain fun g ↦ do
-  AtomM.run (if tk.isSome then .default else .reducible) (proveEq g)
+elab (name := ring1) "ring1" tk:"!"? : tactic => do
+  -- let s ← saveState
+  -- try
+  --   evalTactic <| ← `(tactic| egg_ring)
+  --   logWarning "egg ring succeeded"
+  -- catch err =>
+  --   logWarning m!"egg ring failed: {err.toMessageData}"
+  --   s.restore
+    liftMetaMAtMain fun g ↦ do
+      AtomM.run (if tk.isSome then .default else .reducible) (proveEq g)
 
 @[inherit_doc ring1] macro "ring1!" : tactic => `(tactic| ring1 !)

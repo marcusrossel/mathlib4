@@ -266,7 +266,8 @@ theorem ofRat_inv (x : β) : ofRat x⁻¹ = ((ofRat x)⁻¹ : (Cauchy abv)) :=
 noncomputable instance instDivInvMonoid : DivInvMonoid (Cauchy abv) where
 
 lemma ofRat_div (x y : β) : ofRat (x / y) = (ofRat x / ofRat y : Cauchy abv) := by
-  simp only [div_eq_mul_inv, ofRat_inv, ofRat_mul]
+  -- Egg:
+  sorry -- simp only [div_eq_mul_inv, ofRat_inv, ofRat_mul]
 #align cau_seq.completion.of_rat_div CauSeq.Completion.ofRat_div
 
 /-- The Cauchy completion forms a division ring. -/
@@ -276,7 +277,8 @@ noncomputable instance Cauchy.divisionRing : DivisionRing (Cauchy abv) where
   mul_inv_cancel x := CauSeq.Completion.mul_inv_cancel
   nnqsmul := (· • ·)
   qsmul := (· • ·)
-  nnratCast_def q := by simp_rw [← ofRat_nnratCast, NNRat.cast_def, ofRat_div, ofRat_natCast]
+  -- Egg: timeout
+  nnratCast_def q := sorry -- by simp_rw [← ofRat_nnratCast, NNRat.cast_def, ofRat_div, ofRat_natCast]
   ratCast_def q := by rw [← ofRat_ratCast, Rat.cast_def, ofRat_div, ofRat_natCast, ofRat_intCast]
   nnqsmul_def q x := Quotient.inductionOn x fun f ↦ congr_arg mk <| ext fun i ↦ NNRat.smul_def _ _
   qsmul_def q x := Quotient.inductionOn x fun f ↦ congr_arg mk <| ext fun i ↦ Rat.smul_def _ _

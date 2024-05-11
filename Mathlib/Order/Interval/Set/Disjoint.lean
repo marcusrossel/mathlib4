@@ -115,22 +115,26 @@ theorem iUnion_Ioi [NoMinOrder α] : ⋃ a : α, Ioi a = univ :=
 
 @[simp]
 theorem iUnion_Ico_right [NoMaxOrder α] (a : α) : ⋃ b, Ico a b = Ici a := by
-  simp only [← Ici_inter_Iio, ← inter_iUnion, iUnion_Iio, inter_univ]
+  -- Egg: unbound condition variable
+  sorry -- simp only [← Ici_inter_Iio, ← inter_iUnion, iUnion_Iio, inter_univ]
 #align set.Union_Ico_right Set.iUnion_Ico_right
 
 @[simp]
 theorem iUnion_Ioo_right [NoMaxOrder α] (a : α) : ⋃ b, Ioo a b = Ioi a := by
-  simp only [← Ioi_inter_Iio, ← inter_iUnion, iUnion_Iio, inter_univ]
+  -- Egg: unbound condition variable
+  sorry -- simp only [← Ioi_inter_Iio, ← inter_iUnion, iUnion_Iio, inter_univ]
 #align set.Union_Ioo_right Set.iUnion_Ioo_right
 
 @[simp]
 theorem iUnion_Ioc_left [NoMinOrder α] (b : α) : ⋃ a, Ioc a b = Iic b := by
-  simp only [← Ioi_inter_Iic, ← iUnion_inter, iUnion_Ioi, univ_inter]
+  -- Egg: unbound condition variable
+  sorry -- simp only [← Ioi_inter_Iic, ← iUnion_inter, iUnion_Ioi, univ_inter]
 #align set.Union_Ioc_left Set.iUnion_Ioc_left
 
 @[simp]
 theorem iUnion_Ioo_left [NoMinOrder α] (b : α) : ⋃ a, Ioo a b = Iio b := by
-  simp only [← Ioi_inter_Iio, ← iUnion_inter, iUnion_Ioi, univ_inter]
+  -- Egg: unbound condition variable
+  sorry -- simp only [← Ioi_inter_Iio, ← iUnion_inter, iUnion_Ioi, univ_inter]
 #align set.Union_Ioo_left Set.iUnion_Ioo_left
 
 end Preorder

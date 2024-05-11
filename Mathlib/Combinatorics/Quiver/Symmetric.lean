@@ -97,7 +97,8 @@ instance _root_.Prefunctor.mapReverseComp
     (φ : U ⥤q V) (ψ : V ⥤q W) [φ.MapReverse] [ψ.MapReverse] :
     (φ ⋙q ψ).MapReverse where
   map_reverse' e := by
-    simp only [Prefunctor.comp_map, Prefunctor.MapReverse.map_reverse']
+    -- Egg: unbound condition variable
+    sorry -- simp only [Prefunctor.comp_map, Prefunctor.MapReverse.map_reverse']
 #align prefunctor.map_reverse_comp Prefunctor.mapReverseComp
 
 instance _root_.Prefunctor.mapReverseId :

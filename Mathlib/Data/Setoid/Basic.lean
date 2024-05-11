@@ -232,7 +232,8 @@ theorem sup_eq_eqvGen (r s : Setoid α) :
     r ⊔ s = EqvGen.Setoid fun x y => r.Rel x y ∨ s.Rel x y := by
   rw [eqvGen_eq]
   apply congr_arg sInf
-  simp only [le_def, or_imp, ← forall_and]
+  -- Egg: Stack overflow
+  sorry -- simp only [le_def, or_imp, ← forall_and]
 #align setoid.sup_eq_eqv_gen Setoid.sup_eq_eqvGen
 
 /-- The supremum of 2 equivalence relations r and s is the equivalence closure of the

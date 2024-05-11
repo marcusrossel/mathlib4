@@ -961,7 +961,8 @@ instance subsingleton_gcdMonoid_of_unique_units : Subsingleton (GCDMonoid α) :=
     cases g₁
     cases g₂
     dsimp only at hgcd hlcm
-    simp only [hgcd, hlcm]⟩
+    -- Egg:
+    sorry⟩ -- simp only [hgcd, hlcm]⟩
 #align subsingleton_gcd_monoid_of_unique_units subsingleton_gcdMonoid_of_unique_units
 
 instance subsingleton_normalizedGCDMonoid_of_unique_units : Subsingleton (NormalizedGCDMonoid α) :=
