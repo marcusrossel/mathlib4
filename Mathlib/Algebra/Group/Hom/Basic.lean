@@ -110,6 +110,8 @@ theorem mul_comp [Mul M] [Mul N] [CommSemigroup P] (g₁ g₂ : N →ₙ* P) (f 
 theorem comp_mul [Mul M] [CommSemigroup N] [CommSemigroup P] (g : N →ₙ* P) (f₁ f₂ : M →ₙ* N) :
     g.comp (f₁ * f₂) = g.comp f₁ * g.comp f₂ := by
   ext
+  set_option egg.eraseProofs false in
+  set_option trace.egg true in
   simp only [mul_apply, Function.comp_apply, map_mul, coe_comp]
 #align mul_hom.comp_mul MulHom.comp_mul
 #align add_hom.comp_add AddHom.comp_add
@@ -223,7 +225,9 @@ lemma mul_comp [MulOneClass P] (g₁ g₂ : M →* N) (f : P →* M) :
 @[to_additive]
 lemma comp_mul [CommMonoid P] (g : N →* P) (f₁ f₂ : M →* N) :
     g.comp (f₁ * f₂) = g.comp f₁ * g.comp f₂ := by
-  ext; simp only [mul_apply, Function.comp_apply, map_mul, coe_comp]
+  ext
+  set_option egg.eraseProofs false in
+  simp only [mul_apply, Function.comp_apply, map_mul, coe_comp]
 #align monoid_hom.comp_mul MonoidHom.comp_mul
 #align add_monoid_hom.comp_add AddMonoidHom.comp_add
 
@@ -272,7 +276,9 @@ lemma div_comp (f g : N →* G) (h : M →* N) : (f / g).comp h = f.comp h / g.c
 
 @[to_additive (attr := simp)]
 lemma comp_div (f : G →* H) (g h : M →* G) : f.comp (g / h) = f.comp g / f.comp h := by
-  ext; simp only [Function.comp_apply, div_apply, map_div, coe_comp]
+  ext
+  set_option egg.eraseProofs false in
+  simp only [Function.comp_apply, div_apply, map_div, coe_comp]
 
 end InvDiv
 
