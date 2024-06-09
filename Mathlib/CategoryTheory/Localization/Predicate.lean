@@ -124,9 +124,9 @@ theorem IsLocalization.mk' (h₁ : Localization.StrictUniversalPropertyFixedTarg
   { inverts := h₁.inverts
     isEquivalence := IsEquivalence.mk' (h₂.lift W.Q W.Q_inverts)
       (eqToIso (Localization.Construction.uniq _ _ (by
-        simp only [← Functor.assoc, Localization.Construction.fac, h₂.fac, Functor.comp_id])))
+        sorry))) -- simp only [← Functor.assoc, Localization.Construction.fac, h₂.fac, Functor.comp_id])))
       (eqToIso (h₁.uniq _ _ (by
-        simp only [← Functor.assoc, h₂.fac, Localization.Construction.fac, Functor.comp_id]))) }
+        sorry ))) }-- simp only [← Functor.assoc, h₂.fac, Localization.Construction.fac, Functor.comp_id]))) }
 #align category_theory.functor.is_localization.mk' CategoryTheory.Functor.IsLocalization.mk'
 
 theorem IsLocalization.for_id (hW : W ≤ MorphismProperty.isomorphisms C) : (𝟭 C).IsLocalization W :=

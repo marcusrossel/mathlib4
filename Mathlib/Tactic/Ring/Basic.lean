@@ -7,11 +7,6 @@ import Mathlib.Algebra.Order.Ring.Rat
 import Mathlib.Tactic.NormNum.Inv
 import Mathlib.Tactic.NormNum.Pow
 import Mathlib.Util.AtomM
-<<<<<<< HEAD
-=======
-import Mathlib.Data.Rat.Order
-import Mathlib.Testing.Egg.RingOverride
->>>>>>> 711af927c (Sorry crashing test cases)
 
 /-!
 # `ring` tactic

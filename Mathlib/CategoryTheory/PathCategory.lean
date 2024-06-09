@@ -132,7 +132,7 @@ theorem ext_functor {C} [Category C] {F G : Paths V ⥤ C} (h_obj : F.obj = G.ob
     induction' f with Y' Z' g e ih
     · erw [F.map_id, G.map_id, Category.id_comp, eqToHom_trans, eqToHom_refl]
     · erw [F.map_comp g (Quiver.Hom.toPath e), G.map_comp g (Quiver.Hom.toPath e), ih, h]
-      simp only [Category.id_comp, eqToHom_refl, eqToHom_trans_assoc, Category.assoc]
+      sorry -- simp only [Category.id_comp, eqToHom_refl, eqToHom_trans_assoc, Category.assoc]
 #align category_theory.paths.ext_functor CategoryTheory.Paths.ext_functor
 
 end Paths

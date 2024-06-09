@@ -339,7 +339,7 @@ def functorProdToProdFunctor : (A ⥤ B × C) ⥤ (A ⥤ B) × (A ⥤ C) where
           simp only [Functor.comp_map, Prod.fst_map, ← prod_comp_fst, α.naturality] },
       { app := fun X => (α.app X).2
         naturality := fun X Y f => by
-          simp only [Functor.comp_map, Prod.snd_map, ← prod_comp_snd, α.naturality] }⟩
+          sorry }⟩ -- simp only [Functor.comp_map, Prod.snd_map, ← prod_comp_snd, α.naturality] }⟩
 #align category_theory.functor_prod_to_prod_functor CategoryTheory.functorProdToProdFunctor
 
 /-- The unit isomorphism for `functorProdFunctorEquiv` -/

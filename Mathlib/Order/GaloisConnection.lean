@@ -292,7 +292,7 @@ theorem u_iInf₂ {f : ∀ i, κ i → β} : u (⨅ (i) (j), f i j) = ⨅ (i) (j
   gc.dual.l_iSup₂
 #align galois_connection.u_infi₂ GaloisConnection.u_iInf₂
 
-theorem l_sSup {s : Set α} : l (sSup s) = ⨆ a ∈ s, l a := by simp only [sSup_eq_iSup, gc.l_iSup]
+theorem l_sSup {s : Set α} : l (sSup s) = ⨆ a ∈ s, l a := by simp [sSup_eq_iSup, gc.l_iSup]
 #align galois_connection.l_Sup GaloisConnection.l_sSup
 
 theorem u_sInf {s : Set β} : u (sInf s) = ⨅ a ∈ s, u a :=

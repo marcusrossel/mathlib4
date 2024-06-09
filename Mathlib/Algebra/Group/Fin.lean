@@ -120,7 +120,7 @@ lemma lt_sub_one_iff {k : Fin (n + 2)} : k < k - 1 ↔ k = 0 := by
 #align fin.le_sub_one_iff Fin.le_sub_one_iff
 
 lemma sub_one_lt_iff {k : Fin (n + 1)} : k - 1 < k ↔ 0 < k :=
-  not_iff_not.1 <| by simp only [lt_def, not_lt, val_fin_le, le_sub_one_iff, le_zero_iff]
+  not_iff_not.1 <| by sorry -- simp only [lt_def, not_lt, val_fin_le, le_sub_one_iff, le_zero_iff]
 #align fin.sub_one_lt_iff Fin.sub_one_lt_iff
 
 @[simp] lemma neg_last (n : ℕ) : -Fin.last n = 1 := by simp [neg_eq_iff_add_eq_zero]

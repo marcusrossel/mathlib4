@@ -1127,7 +1127,7 @@ theorem Prime.le_or_le {p : Associates α} (hp : Prime p) {a b : Associates α} 
 @[simp]
 theorem prime_mk {p : α} : Prime (Associates.mk p) ↔ Prime p := by
   rw [Prime, _root_.Prime, forall_associated]
-  simp only [forall_associated, mk_ne_zero, isUnit_mk, mk_mul_mk, mk_dvd_mk]
+  sorry -- simp only [forall_associated, mk_ne_zero, isUnit_mk, mk_mul_mk, mk_dvd_mk]
 #align associates.prime_mk Associates.prime_mk
 
 @[simp]

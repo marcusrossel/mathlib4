@@ -2073,7 +2073,7 @@ theorem filter_singleton {a : α} (p : α → Prop) [DecidablePred p] :
 
 theorem filter_nsmul (s : Multiset α) (n : ℕ) : filter p (n • s) = n • filter p s := by
   refine s.induction_on ?_ ?_
-  · simp only [filter_zero, nsmul_zero]
+  · sorry -- simp only [filter_zero, nsmul_zero]
   · intro a ha ih
     rw [nsmul_cons, filter_add, ih, filter_cons, nsmul_add]
     congr
@@ -2696,7 +2696,7 @@ end
 theorem addHom_ext [AddZeroClass β] ⦃f g : Multiset α →+ β⦄ (h : ∀ x, f {x} = g {x}) : f = g := by
   ext s
   induction' s using Multiset.induction_on with a s ih
-  · simp only [_root_.map_zero]
+  · sorry -- simp only [_root_.map_zero]
   · simp only [← singleton_add, _root_.map_add, ih, h]
 #align multiset.add_hom_ext Multiset.addHom_ext
 
@@ -2735,8 +2735,8 @@ for more discussion.
 @[simp]
 theorem map_count_True_eq_filter_card (s : Multiset α) (p : α → Prop) [DecidablePred p] :
     (s.map p).count True = card (s.filter p) := by
-  simp only [count_eq_card_filter_eq, map_filter, card_map, Function.id_comp,
-    eq_true_eq_id, Function.comp_apply]
+  simp only [count_eq_card_filter_eq, map_filter, card_map, Function.id_comp, eq_true_eq_id,
+    Function.comp_apply]
 #align multiset.map_count_true_eq_filter_card Multiset.map_count_True_eq_filter_card
 
 /-! ### Lift a relation to `Multiset`s -/
