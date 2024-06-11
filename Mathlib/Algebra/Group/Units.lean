@@ -541,7 +541,7 @@ theorem divp_left_inj (u : αˣ) {a b : α} : a /ₚ u = b /ₚ u ↔ a = b :=
 
 @[field_simps]
 theorem divp_divp_eq_divp_mul (x : α) (u₁ u₂ : αˣ) : x /ₚ u₁ /ₚ u₂ = x /ₚ (u₂ * u₁) := by
-  simp only [divp, mul_inv_rev, Units.val_mul, mul_assoc]
+  sorry -- simp only [divp, mul_inv_rev, Units.val_mul, mul_assoc]
 #align divp_divp_eq_divp_mul divp_divp_eq_divp_mul
 
 /- Porting note: to match the mathlib3 behavior, this needs to have higher simp

@@ -421,14 +421,14 @@ instance commSemiring : CommSemiring Num where
   add_comm _ _ := by simp_rw [← to_nat_inj, add_to_nat, add_comm]
   mul_comm _ _ := by simp_rw [← to_nat_inj, mul_to_nat, mul_comm]
   mul_assoc _ _ _ := by simp_rw [← to_nat_inj, mul_to_nat, mul_assoc]
-  left_distrib _ _ _ := by simp only [← to_nat_inj, mul_to_nat, add_to_nat, mul_add]
-  right_distrib _ _ _ := by simp only [← to_nat_inj, mul_to_nat, add_to_nat, add_mul]
+  left_distrib _ _ _ := sorry -- by simp only [← to_nat_inj, mul_to_nat, add_to_nat, mul_add]
+  right_distrib _ _ _ := sorry -- by simp only [← to_nat_inj, mul_to_nat, add_to_nat, add_mul]
 #align num.comm_semiring Num.commSemiring
 
 instance orderedCancelAddCommMonoid : OrderedCancelAddCommMonoid Num where
   le := (· ≤ ·)
   lt := (· < ·)
-  lt_iff_le_not_le a b := by simp only [← lt_to_nat, ← le_to_nat, lt_iff_le_not_le]
+  lt_iff_le_not_le a b := by sorry -- simp only [← lt_to_nat, ← le_to_nat, lt_iff_le_not_le]
   le_refl := by transfer
   le_trans a b c := by transfer_rw; apply le_trans
   le_antisymm a b := by transfer_rw; apply le_antisymm

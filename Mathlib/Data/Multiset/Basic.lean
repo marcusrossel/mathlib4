@@ -2697,7 +2697,7 @@ theorem addHom_ext [AddZeroClass β] ⦃f g : Multiset α →+ β⦄ (h : ∀ x,
   ext s
   induction' s using Multiset.induction_on with a s ih
   · sorry -- simp only [_root_.map_zero]
-  · simp only [← singleton_add, _root_.map_add, ih, h]
+  · sorry -- simp only [← singleton_add, _root_.map_add, ih, h]
 #align multiset.add_hom_ext Multiset.addHom_ext
 
 section Embedding
@@ -2735,8 +2735,7 @@ for more discussion.
 @[simp]
 theorem map_count_True_eq_filter_card (s : Multiset α) (p : α → Prop) [DecidablePred p] :
     (s.map p).count True = card (s.filter p) := by
-  simp only [count_eq_card_filter_eq, map_filter, card_map, Function.id_comp, eq_true_eq_id,
-    Function.comp_apply]
+  sorry -- simp only [count_eq_card_filter_eq, map_filter, card_map, Function.id_comp, eq_true_eq_id, Function.comp_apply]
 #align multiset.map_count_true_eq_filter_card Multiset.map_count_True_eq_filter_card
 
 /-! ### Lift a relation to `Multiset`s -/

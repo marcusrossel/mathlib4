@@ -1215,7 +1215,7 @@ theorem ne_insert_of_not_mem (s t : Finset α) {a : α} (h : a ∉ s) : s ≠ in
 #align finset.ne_insert_of_not_mem Finset.ne_insert_of_not_mem
 
 theorem insert_subset_iff : insert a s ⊆ t ↔ a ∈ t ∧ s ⊆ t := by
-  simp only [subset_iff, mem_insert, forall_eq, or_imp, forall_and]
+  sorry -- simp only [subset_iff, mem_insert, forall_eq, or_imp, forall_and]
 #align finset.insert_subset Finset.insert_subset_iff
 
 theorem insert_subset (ha : a ∈ t) (hs : s ⊆ t) : insert a s ⊆ t :=

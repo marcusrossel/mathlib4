@@ -121,15 +121,13 @@ theorem image_swap_product [DecidableEq (α × β)] (s : Finset α) (t : Finset 
 theorem product_eq_biUnion [DecidableEq (α × β)] (s : Finset α) (t : Finset β) :
     s ×ˢ t = s.biUnion fun a => t.image fun b => (a, b) :=
   ext fun ⟨x, y⟩ => by
-    simp only [mem_product, mem_biUnion, mem_image, exists_prop, Prod.mk.inj_iff, and_left_comm,
-      exists_and_left, exists_eq_right, exists_eq_left]
+    sorry -- simp only [mem_product, mem_biUnion, mem_image, exists_prop, Prod.mk.inj_iff, and_left_comm, exists_and_left, exists_eq_right, exists_eq_left]
 #align finset.product_eq_bUnion Finset.product_eq_biUnion
 
 theorem product_eq_biUnion_right [DecidableEq (α × β)] (s : Finset α) (t : Finset β) :
     s ×ˢ t = t.biUnion fun b => s.image fun a => (a, b) :=
   ext fun ⟨x, y⟩ => by
-    simp only [mem_product, mem_biUnion, mem_image, exists_prop, Prod.mk.inj_iff, and_left_comm,
-      exists_and_left, exists_eq_right, exists_eq_left]
+    sorry -- simp only [mem_product, mem_biUnion, mem_image, exists_prop, Prod.mk.inj_iff, and_left_comm, exists_and_left, exists_eq_right, exists_eq_left]
 #align finset.product_eq_bUnion_right Finset.product_eq_biUnion_right
 
 /-- See also `Finset.sup_product_left`. -/

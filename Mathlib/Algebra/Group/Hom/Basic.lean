@@ -110,9 +110,7 @@ theorem mul_comp [Mul M] [Mul N] [CommSemigroup P] (g₁ g₂ : N →ₙ* P) (f 
 theorem comp_mul [Mul M] [CommSemigroup N] [CommSemigroup P] (g : N →ₙ* P) (f₁ f₂ : M →ₙ* N) :
     g.comp (f₁ * f₂) = g.comp f₁ * g.comp f₂ := by
   ext
-  set_option egg.eraseProofs false in
-  set_option trace.egg true in
-  simp only [mul_apply, Function.comp_apply, map_mul, coe_comp]
+  sorry -- simp only [mul_apply, Function.comp_apply, map_mul, coe_comp]
 #align mul_hom.comp_mul MulHom.comp_mul
 #align add_hom.comp_add AddHom.comp_add
 

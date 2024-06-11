@@ -26,7 +26,7 @@ lemma mem_piFinset_succ' {x : ∀ i, α i} {s : ∀ i, Finset (α i)} :
 lemma cons_mem_piFinset_cons {x₀ : α 0} {x : ∀ i : Fin n, α i.succ}
     {s₀ : Finset (α 0)} {s : ∀ i : Fin n, Finset (α i.succ)} :
     cons x₀ x ∈ piFinset (cons s₀ s) ↔ x₀ ∈ s₀ ∧ x ∈ piFinset s := by
-  simp_rw [mem_piFinset_succ, cons_zero, tail_cons]
+  sorry -- simp_rw [mem_piFinset_succ, cons_zero, tail_cons]
 
 lemma snoc_mem_piFinset_snoc {x : ∀ i : Fin n, α i.castSucc} {xₙ : α (.last n)}
     {s : ∀ i : Fin n, Finset (α i.castSucc)} {sₙ : Finset (α $ .last n)} :

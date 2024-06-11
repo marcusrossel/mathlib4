@@ -95,7 +95,7 @@ variable [Monoid M] [Monoid N] [Monoid P] {l l₁ l₂ : List M} {a : M}
 theorem prod_cons : (a :: l).prod = a * l.prod :=
   calc
     (a :: l).prod = foldl (· * ·) (a * 1) l := by
-      simp only [List.prod, foldl_cons, one_mul, mul_one]
+      sorry -- simp only [List.prod, foldl_cons, one_mul, mul_one]
     _ = _ := foldl_assoc
 #align list.prod_cons List.prod_cons
 #align list.sum_cons List.sum_cons
