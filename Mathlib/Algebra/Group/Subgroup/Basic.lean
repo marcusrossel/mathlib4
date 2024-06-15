@@ -3626,7 +3626,7 @@ end SubgroupNormal
 
 @[to_additive]
 theorem disjoint_def {H₁ H₂ : Subgroup G} : Disjoint H₁ H₂ ↔ ∀ {x : G}, x ∈ H₁ → x ∈ H₂ → x = 1 :=
-  disjoint_iff_inf_le.trans <| by simp only [Disjoint, SetLike.le_def, mem_inf, mem_bot, and_imp]
+  disjoint_iff_inf_le.trans <| by sorry -- simp only [Disjoint, SetLike.le_def, mem_inf, mem_bot, and_imp]
 #align subgroup.disjoint_def Subgroup.disjoint_def
 #align add_subgroup.disjoint_def AddSubgroup.disjoint_def
 

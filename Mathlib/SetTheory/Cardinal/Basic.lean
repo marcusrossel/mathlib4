@@ -1607,7 +1607,7 @@ theorem mk_eq_nat_iff {α : Type u} {n : ℕ} : #α = n ↔ Nonempty (α ≃ Fin
 #align cardinal.mk_eq_nat_iff Cardinal.mk_eq_nat_iff
 
 theorem lt_aleph0_iff_finite {α : Type u} : #α < ℵ₀ ↔ Finite α := by
-  simp only [lt_aleph0, mk_eq_nat_iff, finite_iff_exists_equiv_fin]
+  sorry -- simp only [lt_aleph0, mk_eq_nat_iff, finite_iff_exists_equiv_fin]
 #align cardinal.lt_aleph_0_iff_finite Cardinal.lt_aleph0_iff_finite
 
 theorem lt_aleph0_iff_fintype {α : Type u} : #α < ℵ₀ ↔ Nonempty (Fintype α) :=

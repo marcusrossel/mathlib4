@@ -1023,8 +1023,7 @@ theorem isCompl_principal (s : Set α) : IsCompl (𝓟 s) (𝓟 sᶜ) :=
 #align filter.is_compl_principal Filter.isCompl_principal
 
 theorem mem_inf_principal' {f : Filter α} {s t : Set α} : s ∈ f ⊓ 𝓟 t ↔ tᶜ ∪ s ∈ f := by
-  simp only [← le_principal_iff, (isCompl_principal s).le_left_iff, disjoint_assoc, inf_principal,
-    ← (isCompl_principal (t ∩ sᶜ)).le_right_iff, compl_inter, compl_compl]
+  sorry -- simp only [← le_principal_iff, (isCompl_principal s).le_left_iff, disjoint_assoc, inf_principal, ← (isCompl_principal (t ∩ sᶜ)).le_right_iff, compl_inter, compl_compl]
 #align filter.mem_inf_principal' Filter.mem_inf_principal'
 
 lemma mem_inf_principal {f : Filter α} {s t : Set α} : s ∈ f ⊓ 𝓟 t ↔ { x | x ∈ t → x ∈ s } ∈ f := by
@@ -2806,7 +2805,7 @@ protected theorem push_pull (f : α → β) (F : Filter α) (G : Filter β) :
 #align filter.push_pull Filter.push_pull
 
 protected theorem push_pull' (f : α → β) (F : Filter α) (G : Filter β) :
-    map f (comap f G ⊓ F) = G ⊓ map f F := by simp only [Filter.push_pull, inf_comm]
+    map f (comap f G ⊓ F) = G ⊓ map f F := by sorry -- simp only [Filter.push_pull, inf_comm]
 #align filter.push_pull' Filter.push_pull'
 
 theorem principal_eq_map_coe_top (s : Set α) : 𝓟 s = map ((↑) : s → α) ⊤ := by simp

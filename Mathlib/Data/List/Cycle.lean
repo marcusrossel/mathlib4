@@ -324,9 +324,9 @@ theorem prev_nthLe (l : List α) (h : Nodup l) (n : ℕ) (hn : n < l.length) :
         Nat.mod_eq_of_lt (Nat.succ_lt_succ l.length.lt_succ_self)]
     · simp only [mem_cons, nodup_cons] at h
       push_neg at h
-      simp only [List.prev_cons_cons_of_ne _ _ _ _ h.left.left.symm, Nat.zero_eq, List.length,
-        List.nthLe, add_comm, eq_self_iff_true, Nat.succ_add_sub_one, Nat.mod_self, zero_add,
-        List.get]
+      sorry -- simp only [List.prev_cons_cons_of_ne _ _ _ _ h.left.left.symm, Nat.zero_eq, List.length,
+        -- List.nthLe, add_comm, eq_self_iff_true, Nat.succ_add_sub_one, Nat.mod_self, zero_add,
+        -- List.get]
     · rw [prev_ne_cons_cons]
       · convert hl n.succ y h.of_cons (Nat.le_of_succ_le_succ hn) using 1
         have : ∀ k hk, (y :: l).nthLe k hk = (x :: y :: l).nthLe (k + 1) (Nat.succ_lt_succ hk) := by

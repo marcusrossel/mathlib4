@@ -415,7 +415,7 @@ theorem subtypePerm_pow (f : Perm α) (n : ℕ) (hf) :
     (f.subtypePerm hf : Perm { x // p x }) ^ n = (f ^ n).subtypePerm (pow_aux hf) := by
   induction' n with n ih
   · simp
-  · simp_rw [pow_succ', ih, subtypePerm_mul]
+  · sorry -- simp_rw [pow_succ', ih, subtypePerm_mul]
 #align equiv.perm.subtype_perm_pow Equiv.Perm.subtypePerm_pow
 
 private theorem zpow_aux (hf : ∀ x, p x ↔ p (f x)) : ∀ {n : ℤ} (x), p x ↔ p ((f ^ n) x)

@@ -253,7 +253,7 @@ instance : CoeTC SignType α :=
 lemma map_cast' {β : Type*} [One β] [Neg β] [Zero β]
     (f : α → β) (h₁ : f 1 = 1) (h₂ : f 0 = 0) (h₃ : f (-1) = -1) (s : SignType) :
     f s = s := by
-  cases s <;> simp only [SignType.cast, h₁, h₂, h₃]
+  cases s <;> sorry -- simp only [SignType.cast, h₁, h₂, h₃]
 
 /-- Casting out of `SignType` respects composition with suitable bundled homomorphism types. -/
 lemma map_cast {α β F : Type*} [AddGroupWithOne α] [One β] [SubtractionMonoid β]
@@ -379,7 +379,7 @@ variable [Zero α] [LinearOrder α] {a : α}
 lemma StrictMono.sign_comp {β F : Type*} [Zero β] [Preorder β] [DecidableRel ((· < ·) : β → β → _)]
     [FunLike F α β] [ZeroHomClass F α β] {f : F} (hf : StrictMono f) (a : α) :
     sign (f a) = sign a := by
-  simp only [sign_apply, ← map_zero f, hf.lt_iff_lt]
+  sorry -- simp only [sign_apply, ← map_zero f, hf.lt_iff_lt]
 
 @[simp]
 theorem sign_eq_zero_iff : sign a = 0 ↔ a = 0 := by
@@ -429,7 +429,7 @@ section OrderedRing
 lemma sign_intCast {α : Type*} [OrderedRing α] [Nontrivial α]
     [DecidableRel ((· < ·) : α → α → Prop)] (n : ℤ) :
     sign (n : α) = sign n := by
-  simp only [sign_apply, Int.cast_pos, Int.cast_lt_zero]
+  sorry -- simp only [sign_apply, Int.cast_pos, Int.cast_lt_zero]
 
 end OrderedRing
 

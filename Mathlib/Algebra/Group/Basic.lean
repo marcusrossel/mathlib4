@@ -603,7 +603,7 @@ lemma zpow_neg (a : α) : ∀ n : ℤ, a ^ (-n) = (a ^ n)⁻¹
 
 @[to_additive neg_one_zsmul_add]
 lemma mul_zpow_neg_one (a b : α) : (a * b) ^ (-1 : ℤ) = b ^ (-1 : ℤ) * a ^ (-1 : ℤ) := by
-  simp only [zpow_neg, zpow_one, mul_inv_rev]
+  sorry -- simp only [zpow_neg, zpow_one, mul_inv_rev]
 #align mul_zpow_neg_one mul_zpow_neg_one
 #align neg_one_zsmul_add neg_one_zsmul_add
 

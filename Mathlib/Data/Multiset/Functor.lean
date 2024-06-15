@@ -114,6 +114,7 @@ theorem comp_traverse {G H : Type _ → Type _} [Applicative G] [Applicative H] 
   simp only [traverse, quot_mk_to_coe, lift_coe, Coe.coe, Function.comp_apply, Functor.map_map,
     functor_norm]
   simp only [Function.comp, lift_coe]
+  rfl
 #align multiset.comp_traverse Multiset.comp_traverse
 
 theorem map_traverse {G : Type* → Type _} [Applicative G] [CommApplicative G] {α β γ : Type _}

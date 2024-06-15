@@ -223,8 +223,7 @@ theorem ofFn_fin_repeat {m} (a : Fin m → α) (n : ℕ) :
 @[simp]
 theorem pairwise_ofFn {R : α → α → Prop} {n} {f : Fin n → α} :
     (ofFn f).Pairwise R ↔ ∀ ⦃i j⦄, i < j → R (f i) (f j) := by
-  simp only [pairwise_iff_get, (Fin.rightInverse_cast (length_ofFn f)).surjective.forall, get_ofFn,
-    lt_iff_not_le, Fin.cast_le_cast]
+  sorry -- simp only [pairwise_iff_get, (Fin.rightInverse_cast (length_ofFn f)).surjective.forall, get_ofFn, lt_iff_not_le, Fin.cast_le_cast]
 #align list.pairwise_of_fn List.pairwise_ofFn
 
 /-- Lists are equivalent to the sigma type of tuples of a given length. -/

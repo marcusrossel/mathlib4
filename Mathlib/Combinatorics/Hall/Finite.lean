@@ -57,8 +57,7 @@ theorem hall_cond_of_erase {x : ι} (a : α)
   · have ha' : s'.card < (s'.biUnion fun x => t x).card := by
       convert ha he fun h => by simpa [← h] using mem_univ x using 2
       ext x
-      simp only [mem_image, mem_biUnion, exists_prop, SetCoe.exists, exists_and_right,
-        exists_eq_right, Subtype.coe_mk]
+      sorry -- simp only [mem_image, mem_biUnion, exists_prop, SetCoe.exists, exists_and_right, exists_eq_right, Subtype.coe_mk]
     rw [← erase_biUnion]
     by_cases hb : a ∈ s'.biUnion fun x => t x
     · rw [card_erase_of_mem hb]

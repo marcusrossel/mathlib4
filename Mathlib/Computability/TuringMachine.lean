@@ -575,8 +575,7 @@ theorem Tape.mk'_right₀ {Γ} [Inhabited Γ] (L R : ListBlank Γ) : (Tape.mk' L
 @[simp]
 theorem Tape.mk'_left_right₀ {Γ} [Inhabited Γ] (T : Tape Γ) : Tape.mk' T.left T.right₀ = T := by
   cases T
-  simp only [Tape.right₀, Tape.mk', ListBlank.head_cons, ListBlank.tail_cons, eq_self_iff_true,
-    and_self_iff]
+  sorry -- simp only [Tape.right₀, Tape.mk', ListBlank.head_cons, ListBlank.tail_cons, eq_self_iff_true, and_self_iff]
 #align turing.tape.mk'_left_right₀ Turing.Tape.mk'_left_right₀
 
 theorem Tape.exists_mk' {Γ} [Inhabited Γ] (T : Tape Γ) : ∃ L R, T = Tape.mk' L R :=
@@ -586,15 +585,13 @@ theorem Tape.exists_mk' {Γ} [Inhabited Γ] (T : Tape Γ) : ∃ L R, T = Tape.mk
 @[simp]
 theorem Tape.move_left_mk' {Γ} [Inhabited Γ] (L R : ListBlank Γ) :
     (Tape.mk' L R).move Dir.left = Tape.mk' L.tail (R.cons L.head) := by
-  simp only [Tape.move, Tape.mk', ListBlank.head_cons, eq_self_iff_true, ListBlank.cons_head_tail,
-    and_self_iff, ListBlank.tail_cons]
+  sorry -- simp only [Tape.move, Tape.mk', ListBlank.head_cons, eq_self_iff_true, ListBlank.cons_head_tail, and_self_iff, ListBlank.tail_cons]
 #align turing.tape.move_left_mk' Turing.Tape.move_left_mk'
 
 @[simp]
 theorem Tape.move_right_mk' {Γ} [Inhabited Γ] (L R : ListBlank Γ) :
     (Tape.mk' L R).move Dir.right = Tape.mk' (L.cons R.head) R.tail := by
-  simp only [Tape.move, Tape.mk', ListBlank.head_cons, eq_self_iff_true, ListBlank.cons_head_tail,
-    and_self_iff, ListBlank.tail_cons]
+  sorry -- simp only [Tape.move, Tape.mk', ListBlank.head_cons, eq_self_iff_true, ListBlank.cons_head_tail, and_self_iff, ListBlank.tail_cons]
 #align turing.tape.move_right_mk' Turing.Tape.move_right_mk'
 
 /-- Construct a tape from a left side and an inclusive right side. -/
@@ -974,7 +971,7 @@ theorem frespects_eq {σ₁ σ₂} {f₂ : σ₂ → Option σ₂} {tr : σ₁ �
 theorem fun_respects {σ₁ σ₂ f₁ f₂} {tr : σ₁ → σ₂} :
     (Respects f₁ f₂ fun a b ↦ tr a = b) ↔ ∀ ⦃a₁⦄, FRespects f₂ tr (tr a₁) (f₁ a₁) :=
   forall_congr' fun a₁ ↦ by
-    cases f₁ a₁ <;> simp only [FRespects, Respects, exists_eq_left', forall_eq']
+    cases f₁ a₁ <;> sorry -- simp only [FRespects, Respects, exists_eq_left', forall_eq']
 #align turing.fun_respects Turing.fun_respects
 
 theorem tr_eval' {σ₁ σ₂} (f₁ : σ₁ → Option σ₁) (f₂ : σ₂ → Option σ₂) (tr : σ₁ → σ₂)

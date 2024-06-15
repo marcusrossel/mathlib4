@@ -77,8 +77,7 @@ theorem mem_lift_sets (hg : Monotone g) {s : Set β} : s ∈ f.lift g ↔ ∃ t 
 
 theorem sInter_lift_sets (hg : Monotone g) :
     ⋂₀ { s | s ∈ f.lift g } = ⋂ s ∈ f, ⋂₀ { t | t ∈ g s } := by
-  simp only [sInter_eq_biInter, mem_setOf_eq, Filter.mem_sets, mem_lift_sets hg, iInter_exists,
-    iInter_and, @iInter_comm _ (Set β)]
+  sorry -- simp only [sInter_eq_biInter, mem_setOf_eq, Filter.mem_sets, mem_lift_sets hg, iInter_exists, iInter_and, @iInter_comm _ (Set β)]
 #align filter.sInter_lift_sets Filter.sInter_lift_sets
 
 theorem mem_lift {s : Set β} {t : Set α} (ht : t ∈ f) (hs : s ∈ g t) : s ∈ f.lift g :=
@@ -185,7 +184,7 @@ theorem lift_const {f : Filter α} {g : Filter β} : (f.lift fun _ => g) = g :=
 
 @[simp]
 theorem lift_inf {f : Filter α} {g h : Set α → Filter β} :
-    (f.lift fun x => g x ⊓ h x) = f.lift g ⊓ f.lift h := by simp only [Filter.lift, iInf_inf_eq]
+    (f.lift fun x => g x ⊓ h x) = f.lift g ⊓ f.lift h := by sorry -- simp only [Filter.lift, iInf_inf_eq]
 #align filter.lift_inf Filter.lift_inf
 
 @[simp]

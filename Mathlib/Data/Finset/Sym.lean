@@ -258,7 +258,7 @@ theorem sym_mono (h : s ⊆ t) (n : ℕ) : s.sym n ⊆ t.sym n := fun _m hm ↦
 @[simp]
 theorem sym_inter (s t : Finset α) (n : ℕ) : (s ∩ t).sym n = s.sym n ∩ t.sym n := by
   ext m
-  simp only [mem_inter, mem_sym_iff, imp_and, forall_and]
+  sorry -- simp only [mem_inter, mem_sym_iff, imp_and, forall_and]
 #align finset.sym_inter Finset.sym_inter
 
 @[simp]

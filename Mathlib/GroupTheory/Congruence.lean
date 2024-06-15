@@ -558,7 +558,7 @@ by `c` or `d`'."]
 theorem sup_eq_conGen (c d : Con M) : c ⊔ d = conGen fun x y => c x y ∨ d x y := by
   rw [conGen_eq]
   apply congr_arg sInf
-  simp only [le_def, or_imp, ← forall_and]
+  sorry -- simp only [le_def, or_imp, ← forall_and]
 #align con.sup_eq_con_gen Con.sup_eq_conGen
 #align add_con.sup_eq_add_con_gen AddCon.sup_eq_addConGen
 

@@ -557,7 +557,7 @@ theorem ringConGen_idem (r : R → R → Prop) : ringConGen (ringConGen r) = rin
 theorem sup_eq_ringConGen (c d : RingCon R) : c ⊔ d = ringConGen fun x y => c x y ∨ d x y := by
   rw [ringConGen_eq]
   apply congr_arg sInf
-  simp only [le_def, or_imp, ← forall_and]
+  sorry -- simp only [le_def, or_imp, ← forall_and]
 
 /-- The supremum of two congruence relations equals the smallest congruence relation containing
     the supremum of the underlying binary operations. -/

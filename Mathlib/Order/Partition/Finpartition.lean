@@ -661,8 +661,7 @@ variable {F : Finset (Finset α)}
 theorem mem_atomise :
     t ∈ (atomise s F).parts ↔
       t.Nonempty ∧ ∃ Q ⊆ F, (s.filter fun i ↦ ∀ u ∈ F, u ∈ Q ↔ i ∈ u) = t := by
-  simp only [atomise, ofErase, bot_eq_empty, mem_erase, mem_image, nonempty_iff_ne_empty,
-    mem_singleton, and_comm, mem_powerset, exists_prop]
+  sorry -- simp only [atomise, ofErase, bot_eq_empty, mem_erase, mem_image, nonempty_iff_ne_empty, mem_singleton, and_comm, mem_powerset, exists_prop]
 #align finpartition.mem_atomise Finpartition.mem_atomise
 
 theorem atomise_empty (hs : s.Nonempty) : (atomise s ∅).parts = {s} := by

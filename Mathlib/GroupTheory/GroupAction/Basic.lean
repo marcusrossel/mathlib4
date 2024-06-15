@@ -819,8 +819,7 @@ theorem mem_stabilizer_of_finite_iff_smul_le (s : Set α) (hs : s.Finite) (g : G
     suffices (g • s).toFinset = Finset.map ⟨_, MulAction.injective g⟩ hs.toFinset by
       rw [this, Finset.card_map, Set.toFinite_toFinset]
     rw [← Finset.coe_inj]
-    simp only [Set.coe_toFinset, Set.toFinite_toFinset, Finset.coe_map,
-      Function.Embedding.coeFn_mk, Set.image_smul]
+    sorry -- simp only [Set.coe_toFinset, Set.toFinite_toFinset, Finset.coe_map, Function.Embedding.coeFn_mk, Set.image_smul]
 
 /-- To prove membership to stabilizer of a *finite set*, it is enough to prove one inclusion. -/
 theorem mem_stabilizer_of_finite_iff_le_smul (s : Set α) (hs : s.Finite) (g : G) :

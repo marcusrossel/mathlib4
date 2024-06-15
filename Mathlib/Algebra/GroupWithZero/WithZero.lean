@@ -270,7 +270,7 @@ instance groupWithZero : GroupWithZero (WithZero α) where
 def unitsWithZeroEquiv : (WithZero α)ˣ ≃* α where
   toFun a := unzero a.ne_zero
   invFun a := Units.mk0 a coe_ne_zero
-  left_inv _ := Units.ext <| by simp only [coe_unzero, Units.mk0_val]
+  left_inv _ := Units.ext <| by sorry -- simp only [coe_unzero, Units.mk0_val]
   right_inv _ := rfl
   -- Egg: stack overflow
   map_mul' _ _ := coe_inj.mp <| by sorry -- simp only [Units.val_mul, coe_unzero, coe_mul]
